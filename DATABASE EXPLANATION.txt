@@ -1,0 +1,35 @@
+DATABASE EXPLANATION:
+Due to my virtual machine limitations and since we no longer use Microsoft azure , I couldn't connect the database on my vm to the visual studio on my desktop, my desktop cannot to a server. below is the database scrips from my database on my vm , it gave many errors such as " 
+
+-- Create Database
+CREATE DATABASE AgriEnergyDB;
+GO
+USE AgriEnergyDB;
+
+-- Table for User Authentication
+CREATE TABLE Users (
+    UserId INT PRIMARY KEY IDENTITY(1,1),
+    Username NVARCHAR(50) UNIQUE NOT NULL,
+    PasswordHash NVARCHAR(256) NOT NULL,
+    Role NVARCHAR(20) CHECK (Role IN ('Farmer', 'Employee')) NOT NULL
+);
+
+-- Table for Farmers
+CREATE TABLE Farmers (
+    FarmerId INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(100) NOT NULL,
+    Location NVARCHAR(100),
+    ContactInfo NVARCHAR(100)
+);
+
+-- Table for Products
+CREATE TABLE Products (
+    ProductId INT PRIMARY KEY IDENTITY(1,1),
+    FarmerId INT FOREIGN KEY REFERENCES Farmers(FarmerId),
+    ProductName NVARCHAR(100) NOT NULL,
+    Category NVARCHAR(50),
+    ProductionDate DATE,
+    CONSTRAINT FK_FarmerProduct FOREIGN KEY (FarmerId) REFERENCES Farmers(FarmerId)
+);
+
+
