@@ -63,20 +63,32 @@ Username: farmer1
 
 Password: Password123
 
+
 Username: farmer2
 
+
 Password: Password123
+
 
 Access:
 Dashboard: /Farmer/Dashboard
 View Products: /Farmer/ProductList
 Add Products: /Farmer/AddProduct
+
+
 2. Employee
 Purpose: Employees manage farmer profiles and review all products in the system.
 Login Credentials (Preloaded for demo purposes):
+
 Username: employee1
+
+
 Password: Password123
+
+
 Access:
+
+
 Dashboard: /Employee/Dashboard
 View Farmers: /Employee/FarmerList
 View All Products: /Employee/ViewAllProducts
