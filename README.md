@@ -1,4 +1,5 @@
 Agri-Energy Connect Prototype
+
 This is a prototype for the Agri-Energy Connect platform, a web application designed to connect farmers with green energy solutions. The system allows farmers to manage their products, while employees can manage farmer profiles and view all products. The application is built using ASP.NET Core and Razor Views.
 
 Table of Contents
