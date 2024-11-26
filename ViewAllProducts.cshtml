@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PROG3A_POE.Models.FarmerProduct>
+
+<h2>All Products</h2>
+
+<!-- Filter Form -->
+<form method="post" asp-action="FilterProducts" class="mb-4">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" name="category" id="category" class="form-control" placeholder="Enter category">
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary mt-4">Filter</button>
+        </div>
+    </div>
+</form>
+
+<!-- Product List -->
+@if (!Model.Any())
+{
+    <p>No products found. Use the filter to refine your search.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Production Date</th>
+                <th>Farmer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Category</td>
+                    <td>@product.ProductionDate.ToShortDateString()</td>
+                    <td>@product.FarmerId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

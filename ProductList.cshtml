@@ -1,0 +1,35 @@
+﻿@model IEnumerable<PROG3A_POE.Models.FarmerProduct>
+
+<h2>Your Products</h2>
+
+@if (!Model.Any())
+{
+    <p>No products found. <a href="/Farmer/AddProduct">Add a Product</a></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Production Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Category</td>
+                    <td>@product.ProductionDate.ToShortDateString()</td>
+                    <td>
+                        <a asp-action="EditProduct" asp-route-id="@product.Id" class="btn btn-warning btn-sm">Edit</a>
+                        <a asp-action="DeleteProduct" asp-route-id="@product.Id" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
