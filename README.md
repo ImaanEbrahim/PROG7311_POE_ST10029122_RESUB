@@ -60,7 +60,7 @@ The prototype provides functionalities for two primary user roles: Farmers and E
 
 Farmers
 Add Products: Farmers can add products they produce, including details like product name, category, and production date.
-View Products: Farmers can view a list of their own products, filtered by their account.
+View and Edit Products: Farmers can view a list of their own products, filtered by their account and edit or delete.
 Employees
 Add Farmer Profiles: Employees can add new farmers to the system.
 View Farmer Profiles: Employees can see a list of all registered farmers.
